@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+  <head> 
+         <!-- meta tags  -->
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+         <title>Mission to Mars</title>
+         <link rel="icon" type="image" href="https://astropedia.astrogeology.usgs.gov/download/Mars/Viking/schiaparelli_enhanced.tif/full.jpg">
+
+         <!-- bootstrap  -->
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  </head>
+
+  <body>
+
+      <div class="container">
+        <!-- JUMBOTRON CONTAINER--> 
+        <div class="jumbotron text-center"</div>
+          <h1>Mission to Mars</h1>
+          <a class="btn btn-primary btn-lg" href="/scrape" target="blank" role="button">Scrape New Data</a>
+        </div>
+
+      <!-- News --> 
+
+      <div class="row">
+        <div class="col-md-12">
+        <h3>Latest Mars News</h3>
+        <hr>
+        <h5>mars_scraped_data.news_title</h5>
+        <p>mars_scraped_data.news_blurb</p>
+      </div>
+    </div>
+     
+    <!-- Placing these in panels  --> 
+
+     <div class="row">
+       <div class="col-md-8">
+         <div class="panel panel-default">
+           <div class="panel-body">
+             <h3>Featured Image</h3>
+             <hr>
+             <img src="{{mars_scraped_data.featured_image}}">
+            </div>
+          </div>
+      
+    </div>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <h3>Current Weather on Mars</h3>
+            <hr>
+            <p>{{mars_scraped_data.mars_weather_text}}</p>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+            <h3>Mars Facts</h3>
+            </p > {mars_scraped_data.mars_table_df | safe}}</p>
+        </div>
+    </div>
+    
+    <div class="container-fluid">
+        <h3> style="text-align:center"> Mars Hemispheres</h2>
+        <hr>
+              {% for items in mars_scraped_data.mars_hemispheres_imgs %}
+              <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                      <a href="{{  }}" class="thumbnail">
+                          <img src="{{  }}" alt="{{  }}">
+                          <h4 class="card-title">{{hemisphere_image_urls.title}}</h4>
+                      </a>
+                    </div>
+                </div>
+              </div>
+              {% endfor %}
+        </div>
+    </div>
+    </div> 
+
+     <!-- BOOTSTRAP JAVASCRIPT-->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
+
+
+
+    
+
+      
+
+    
+
+    
+
+    
+
+
+    
